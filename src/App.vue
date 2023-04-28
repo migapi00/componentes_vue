@@ -1,10 +1,13 @@
 <template>
   <div> {{ text }}</div>
+  <div> {{ algo }}</div>
 </template>
 
 <script>
+import base from "@/mixins/base";
 export default {
   name: 'App',
+  mixins: [base],
   data(){
     return {
       text: "Hola Luis"
@@ -23,8 +26,15 @@ mounted(){
 
 }
 </script>
-
 <style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 
 </style>
 
