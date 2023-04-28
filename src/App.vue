@@ -1,29 +1,30 @@
 <template>
-   <div>
-    <ModalClase />
-  </div>
+  <div> {{ text }}</div>
 </template>
 
 <script>
-import ModalClase from './components/ModalClase.vue';
-
 export default {
   name: 'App',
-  components: {
-    ModalClase
+  data(){
+    return {
+      text: "Hola Luis"
+    };
   },
+beforeCreate(){
+  console.log("beforeCreate", this.$data, this.$el);
+},
+
+created(){
+  console.log("create", this.$data, this.$el);
+},
+mounted(){
+  console.log("mounted", this.$data, this.$el);
+},
+
 }
 </script>
 
 <style>
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} 
 </style>
 
