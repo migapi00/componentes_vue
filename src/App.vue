@@ -1,31 +1,22 @@
 <template>
-  <button v-on:click="show = !show">Menu</button>
-  <Transition name="fade">
-    <MenuInicio v-show="show" />
-  </Transition>
-  
-  
+   <div>
+    <ModalClase />
+  </div>
 </template>
 
 <script>
-import MenuInicio from './components/MenuInicio.vue';
-
+import ModalClase from './components/ModalClase.vue';
 
 export default {
   name: 'App',
   components: {
-    MenuInicio
+    ModalClase
   },
-  data() {
-    return {
-      show: false,
-    };
-  },
-
 }
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,16 +24,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-.fader-leave-active,
-.fade-enter-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  transition: opacity 0;
-}
+} 
 </style>
 
