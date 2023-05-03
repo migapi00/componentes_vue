@@ -2,11 +2,12 @@
     <!-- <div>{{firstName }} {{ lastName }}</div> -->
     <div>{{ fullName }} </div>
     <div>{{ username }} </div>
+    <button ref="btn">Click!</button>
 
 </template>
   
 <script>
-import { ref, computed, toRefs, inject } from "vue"
+import { ref, computed, toRefs, inject, watch } from "vue"
 
 export default {
     props: {
@@ -15,6 +16,13 @@ export default {
 },
 
     setup(props) {
+
+        const btn = ref(null);
+        console.log(btn.value);
+
+        watch (btn, (value) => {
+            console.log(value);
+        });
         
         const { firstName, lastName} = toRefs(props);
 
@@ -27,7 +35,8 @@ export default {
 
         return {
             fullName,
-            username
+            username,
+            btn
         };
     }
 }
