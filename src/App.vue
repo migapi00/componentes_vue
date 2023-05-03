@@ -4,12 +4,17 @@
 
 <script>
 import Home from "./components/Home.vue";
+import { provide } from "vue";
 
 export default {
   name: 'App',
   components: {
     Home
   },
+  setup() {
+    provide ("username", "Eres un cielo");
+  }
+  
 }
 </script>
 
