@@ -1,31 +1,18 @@
 <template>
-  <div> {{ text }}</div>
-  <div> {{ algo }}</div>
+    <Home />
 </template>
 
 <script>
-import base from "@/mixins/base";
+import Home from "./components/Home.vue";
+
 export default {
   name: 'App',
-  mixins: [base],
-  data(){
-    return {
-      text: "Hola Luis"
-    };
+  components: {
+    Home
   },
-beforeCreate(){
-  console.log("beforeCreate", this.$data, this.$el);
-},
-
-created(){
-  console.log("create", this.$data, this.$el);
-},
-mounted(){
-  console.log("mounted", this.$data, this.$el);
-},
-
 }
 </script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -35,6 +22,5 @@ mounted(){
   color: #2c3e50;
   margin-top: 60px;
 }
-
 </style>
 
